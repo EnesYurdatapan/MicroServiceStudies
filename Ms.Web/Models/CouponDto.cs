@@ -1,4 +1,6 @@
-﻿namespace MS.Web.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Ms.Web.Models
 {
     public class CouponDto
     {

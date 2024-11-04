@@ -1,4 +1,4 @@
-﻿using MS.Web.Models;
+﻿using Ms.Web.Models;
 
 namespace Ms.Web.Service.IService
 {

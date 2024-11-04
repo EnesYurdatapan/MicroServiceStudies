@@ -104,7 +104,8 @@ namespace MS.Services.CouponAPI.Controllers
             return _responseDto;
         }
         [HttpDelete]
-        public ResponseDto Put(int id)
+        [Route("{id:int}")]
+        public ResponseDto Delete(int id)
         {
             try
             {

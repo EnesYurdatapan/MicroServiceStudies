@@ -1,4 +1,4 @@
-﻿namespace Ms.Web.Models
+﻿namespace MS.Services.AuthAPI.Models.Dto
 {
     public class ResponseDto
     {
