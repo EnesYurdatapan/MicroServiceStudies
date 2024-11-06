@@ -17,7 +17,7 @@ namespace Ms.Web.Service
         {
             return await _baseService.SendAsync(new Models.RequestDto()
             {
-                ApiType = Utility.StaticDetails.ApiType.POST,
+                ApiType = StaticDetails.ApiType.POST,
                 Data = registerationRequestDto,
                 Url = StaticDetails.AuthAPIBase + "/api/auth/AssignRole"
             });
@@ -27,20 +27,26 @@ namespace Ms.Web.Service
         {
             return await _baseService.SendAsync(new Models.RequestDto()
             {
-                ApiType = Utility.StaticDetails.ApiType.POST,
+                ApiType = StaticDetails.ApiType.POST,
                 Data = loginRequestDto,
                 Url = StaticDetails.AuthAPIBase + "/api/auth/login"
-            });
+            }, withBearer: false);
         }
 
         public async Task<ResponseDto?> RegisterAsync(RegisterationRequestDto registerationRequestDto)
         {
-            return await _baseService.SendAsync(new Models.RequestDto()
+            var x = new RequestDto()
             {
-                ApiType = Utility.StaticDetails.ApiType.POST,
+                ApiType = StaticDetails.ApiType.POST,
                 Data = registerationRequestDto,
-                Url = StaticDetails.AuthAPIBase + "/api/auth/request"
-            });
+                Url = StaticDetails.AuthAPIBase + "/api/auth/register"
+            };
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                ApiType = StaticDetails.ApiType.POST,
+                Data = registerationRequestDto,
+                Url = StaticDetails.AuthAPIBase + "/api/auth/register"
+            }, withBearer: false);
         }
     }
 }

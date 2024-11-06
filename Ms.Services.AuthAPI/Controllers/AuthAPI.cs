@@ -13,7 +13,7 @@ namespace Ms.Services.AuthAPI.Controllers
         private readonly IAuthService _authService;
         protected ResponseDto _responseDto;
 
-        public AuthAPI(IAuthService authService, ResponseDto responseDto)
+        public AuthAPI(IAuthService authService)
         {
             _authService = authService;
             _responseDto = new();
