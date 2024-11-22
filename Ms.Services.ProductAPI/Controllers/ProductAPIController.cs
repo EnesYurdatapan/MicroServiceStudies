@@ -9,9 +9,9 @@ using MS.Services.ProductAPI.Models.Dto;
 
 namespace Ms.Services.ProductAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/product")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProductAPIController : ControllerBase
     {
         private readonly AppDbContext _db;
@@ -56,24 +56,6 @@ namespace Ms.Services.ProductAPI.Controllers
             }
             return _responseDto;
         }
-        //[HttpGet]
-        //[Route("GetByCode/{code}")]
-        //public ResponseDto GetByCode(string code)
-        //{
-        //    try
-        //    {
-        //        Product coupon = _db.Products.FirstOrDefault(u => u.Produc.ToLower() == code.ToLower());
-        //        if (coupon == null)
-        //            _responseDto.IsSuccess = false;
-        //        _responseDto.Result = _mapper.Map<ProductDto>(coupon);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _responseDto.IsSuccess = false;
-        //        _responseDto.Message = ex.Message;
-        //    }
-        //    return _responseDto;
-        //}
         [HttpPost]
         [Authorize(Roles = "ADMIN")]
 
